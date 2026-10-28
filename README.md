@@ -1,19 +1,25 @@
-# Valerie — donation audit
+# Valerie Donation Audit
 
-A web page for auditing photos of donated goods. Claude counts the visible items, matches them to the Goodwill and Salvation Army donation-value guides (or finds cited market prices online), and the page produces an itemized audit as a Word document.
+Web page for producing a donation audit report (Word document) from photos of donated goods.
 
-## Using it
+Site: https://yusrafaheem.com/valerie/
+
+## Instructions
 
 1. Open the site.
-2. Paste an Anthropic API key (create one at https://platform.claude.com/settings/keys) and press **Check key**.
-3. Add up to 6 photos, optional details, and press **Run audit**.
-4. Press **Download the Word report**.
+2. Enter an Anthropic API key and select Test key. Keys are created at https://platform.claude.com/settings/keys.
+3. Add up to 6 photos. Enter report details if needed.
+4. Check the confirmation box and select Run audit.
+5. Select Download Word report.
 
-Each person uses their own API key. The key stays in their browser and is only sent to `api.anthropic.com`; the page's Content-Security-Policy blocks every other destination. "Remember the key" stores it in that browser only.
+## Notes
 
-## What's in this repository
+- Each user needs their own API key. The key is stored only in the user's browser, and only if "Save key in this browser" is checked. It is sent only to api.anthropic.com.
+- Item values are taken from the Goodwill and Salvation Army valuation guides. Items not in the guides are priced from online listings if that option is selected.
+- Values are estimates only and are not an appraisal.
+- This tool is not affiliated with Goodwill or The Salvation Army.
 
-- `index.html` — the whole site: the auditor instructions, the embedded Goodwill and Salvation Army guides, the valuation arithmetic and the Word-report builder.
-- `docx.iife.js` — the docx library (MIT licensed) that builds the Word file in the browser.
+## Files
 
-Values are approximate references, not a certified appraisal or tax determination. Not affiliated with Goodwill or The Salvation Army.
+- index.html: the web page.
+- docx.iife.js: library used to create the Word file (MIT License, see THIRD-PARTY-LICENSES.txt).
